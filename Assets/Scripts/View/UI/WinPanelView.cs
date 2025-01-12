@@ -9,6 +9,8 @@ public class WinPanelView : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI ScoreAwardText;
 
+    [SerializeField] private Image _imageTrueDecision;
+
     private IGameManager _gameManager;
     private IScoreManager _scoreManager;
     private ISceneManager _sceneManager;
@@ -39,6 +41,7 @@ public class WinPanelView : MonoBehaviour
         {
             _scoreManager.AddScore(_gameManager.GetScoreAward());
             _sceneManager.LoadSceneTimer(1, 3f);
+            _imageTrueDecision.gameObject.SetActive(true);
             _isButtonHold = true;
         }
 

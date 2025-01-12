@@ -14,6 +14,7 @@ public class RopeController : MonoBehaviour, IRopeController
     private void Start()
     {
         _gameManager = ServiceLocator.GetService<IGameManager>();
+        CheckRopeIntersection();
     }
     public void AddRope(Rope rope)
     {
