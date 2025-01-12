@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class WinPanelView : MonoBehaviour
 {
     [SerializeField] private Button WinButton;
-    [SerializeField] private Button SkipButton;
 
     [SerializeField] private TextMeshProUGUI ScoreAwardText;
 
@@ -26,13 +25,12 @@ public class WinPanelView : MonoBehaviour
 
         _sceneManager = ServiceLocator.GetService<ISceneManager>();
 
-        SubButtonsHold();
+        SubButtonHold();
     }
 
-    private void SubButtonsHold()
+    private void SubButtonHold()
     {
         WinButton.onClick.AddListener(WinHold);
-        SkipButton.onClick.AddListener(SkipHold);
     }
 
     private void WinHold()
@@ -44,16 +42,6 @@ public class WinPanelView : MonoBehaviour
             _isButtonHold = true;
         }
 
-    }
-
-    private void SkipHold()
-    {
-        if (_isButtonHold == false)
-        {
-            _sceneManager.LoadSceneTimer(1, 3f);
-            _imageTrueDecision.gameObject.SetActive(true);
-            _isButtonHold = true;
-        }
     }
 
 
