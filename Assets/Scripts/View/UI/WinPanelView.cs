@@ -41,7 +41,6 @@ public class WinPanelView : MonoBehaviour
         {
             _scoreManager.AddScore(_gameManager.GetScoreAward());
             _sceneManager.LoadSceneTimer(1, 3f);
-            _imageTrueDecision.gameObject.SetActive(true);
             _isButtonHold = true;
         }
 
@@ -52,6 +51,7 @@ public class WinPanelView : MonoBehaviour
         if (_isButtonHold == false)
         {
             _sceneManager.LoadSceneTimer(1, 3f);
+            _imageTrueDecision.gameObject.SetActive(true);
             _isButtonHold = true;
         }
     }
